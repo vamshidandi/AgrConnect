@@ -1,0 +1,328 @@
+/* Base Styles */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: linear-gradient(to bottom right, #e6ffe6, #ccffcc); /* Light green background theme */
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Horizontal Navigation */
+.dashboard-nav {
+  width: 100%;
+  background: linear-gradient(135deg, #0b0e0d, #185a9d); /* Greenish-blue nav */
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: 1000;
+  background: linear-gradient(90deg, #2ecc71, #27ae60, #1abc9c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  white-space: nowrap;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-links button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+
+.nav-links button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Logout Button Styling */
+.logout-btn {
+  background: rgba(231, 76, 60, 0.2) !important;
+  border: 1px solid rgba(231, 76, 60, 0.5) !important;
+  color: #e74c3c !important;
+}
+
+.logout-btn:hover {
+  background: rgba(231, 76, 60, 0.3) !important;
+  color: white !important;
+  border-color: #e74c3c !important;
+}
+
+/* Language Switcher Styling */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: white;
+}
+
+.language-select {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.language-select option {
+  background: #2c3e50;
+  color: white;
+}
+
+/* Verification text styling */
+.verification-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Content Area */
+.dashboard-content {
+  flex: 1;
+  padding: 30px;
+  background: #f0fff0;
+  width: 100%;
+  margin-left: 0;
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-content h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.welcome-message {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+/* Cards */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.action-card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 6px 20px rgba(0, 128, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #b2f2bb;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top right, rgba(46, 204, 113, 0.1), rgba(26, 188, 156, 0.05));
+  z-index: 0;
+}
+
+.action-card * {
+  position: relative;
+  z-index: 1;
+}
+
+.action-card:hover {
+  transform: scale(1.025);
+  box-shadow: 0 10px 28px rgba(0, 128, 0, 0.25);
+}
+
+.action-card h3 {
+  color: #2ecc71;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.action-card p {
+  color: #444;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.action-icon {
+  font-size: 2rem;
+  margin-bottom: 14px;
+  color: #27ae60;
+  animation: popIn 0.5s ease;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .dashboard-nav {
+    padding: 12px 15px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .nav-links button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-nav {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .nav-links button {
+    padding: 6px 10px;
+    font-size: 12px;
+    flex: 1 0 45%;
+    text-align: center;
+  }
+
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+}
+/* Add this to your existing Dashboard.css */
+
+/* Ensure the quick-actions grid can accommodate 4 cards */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+/* If you want to maintain a maximum of 4 cards per row */
+@media (min-width: 1200px) {
+  .quick-actions {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* For smaller screens */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .quick-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 767px) {
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Nav links adjustments for the new button */
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* If you want the nav buttons to wrap on smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+    justify-content: center;
+  }
+  .nav-links button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}

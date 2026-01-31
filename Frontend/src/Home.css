@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Layout */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background: #ffffff;
+  padding: 0.01rem 2.2rem; /* Reduced padding */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 1000;
+  background: linear-gradient(90deg, #7F7FD5, #86A8E7, #91EAE4); /* pastel-vibrant blue/purple */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  color: #1f2937;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #10b981;
+}
+
+.hero {
+  background:  url('./images/main-pic.jpg') center/cover no-repeat;
+  height: 70vh; /* Full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.hero h1,
+.hero p {
+  text-shadow: 2px 2px 10px rgba(235, 231, 231, 0.5);
+}
+.explore-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  background: rgba(39, 174, 96, 0.7);
+  border: 2px solid #27ae60;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation: glow 2s infinite;
+}
+
+.explore-button:hover {
+  background: #27ae60;
+  transform: scale(1.05);
+  animation: none;
+  box-shadow: 0 0 25px rgba(39, 174, 96, 0.8);
+}
+
+
+
+
+
+
+.highlight {
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+}
+
+
+
+
+
+
+/* Features Section */
+.features-section {
+  background: linear-gradient(135deg, #82c3d8, #bef0c1, #f3f3ff);
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+
+
+.section-title {
+  font-size: 3.5rem;
+  margin-bottom: 2.5rem;
+  color: #1e293b;
+  text-shadow: 0 1px 5px rgba(99, 102, 241, 0.15);
+  animation: popIn 0.8s ease-in-out;
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.feature-card {
+  background: #f9f5f5aa; /* semi-transparent for soft pop */
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 18px;
+  width: 280px;
+  box-shadow: 
+    0 0 15px rgba(255, 182, 193, 0.18),   /* pastel pink */
+    0 0 30px rgba(221, 160, 221, 0.12),   /* soft purple */
+    0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-14px) scale(1.05);
+  box-shadow: 
+    0 0 30px rgba(255, 182, 193, 0.35),  /* stronger pink glow */
+    0 0 60px rgba(221, 160, 221, 0.25),  /* stronger purple */
+    0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+.feature-card h3 {
+  color: #10b981;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #eef2ff;
+  text-align: center;
+  padding: 1.2rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+.contact-section {
+  background-color: #ffffff; /* Clean white background */
+  color: #2c3e50; /* Professional dark blue-gray text */
+  text-align: center;
+  padding: 50px 30px;
+
+  max-width: 1500px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature-image {
+  width: 100%;
+  height: 180px; /* Adjust height as needed */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature-card:hover .feature-image {
+  transform: scale(1.05);
+}
+
+
+.contact-section h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #27ae60; /* Agri AI’s signature green */
+  margin-bottom: 15px;
+}
+
+.contact-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  margin: 10px 0;
+}
+
+.contact-section p a {
+  color: #27ae60; /* Agri AI green for links */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.contact-section p a:hover {
+  color: #1e8449; /* Darker green for hover effect */
+  text-decoration: underline;
+}
+.hii{ 
+  background: linear-gradient(90deg, #7F7FD5, #86A8E7, #91EAE4);
+}
